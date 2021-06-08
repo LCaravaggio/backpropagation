@@ -14,7 +14,7 @@ def densa_forward(X, W, b):
     return np.matmul(X,W)+b
 
 def MSE(X_true, X_pred):
-    return NotImplemented_message()
+    return ((X_pred - X_true)**2).mean(1)
 
 def MSE_grad(X_true, X_pred):
     return NotImplemented_message()
@@ -26,7 +26,7 @@ def sigmoid_jac(Xin):
     return NotImplemented_message()
 
 def softmax(z):
-    return NotImplemented_message()
+    return np.exp(z) / np.sum(np.exp(z))
 
 def softmax_jac(Xin):
     return NotImplemented_message()
