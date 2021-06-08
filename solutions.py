@@ -11,7 +11,7 @@ def NotImplemented_message():
     return np.array([1, 1])
 
 def densa_forward(X, W, b):
-    return NotImplemented_message()
+    return np.matmul(X,W)+b
 
 def MSE(X_true, X_pred):
     return NotImplemented_message()
@@ -20,7 +20,7 @@ def MSE_grad(X_true, X_pred):
     return NotImplemented_message()
 
 def sigmoid(X):
-    return NotImplemented_message()
+    return 1 / (1 + np.exp(-X))
 
 def sigmoid_jac(Xin):
     return NotImplemented_message()
