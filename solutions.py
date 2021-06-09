@@ -32,7 +32,14 @@ def softmax_jac(Xin):
     return NotImplemented_message()
 
 def forward(X, P_true, weights):
-    return NotImplemented_message()
+    d1=densa_forward(X, weights[0], weights[1])
+    s1=sigmoid(d1)
+    d2=densa_forward(s1, weights[2], weights[3])
+    s2=sigmoid(d2)
+    d3=densa_forward(s2, weights[4], weights[5])
+    salida=softmax(d3)
+    mse=MSE(P_true, salida)
+    return  salida, mse, X, s1, s2
 
 def get_gradients(X, P_true, weights):
     return NotImplemented_message()
